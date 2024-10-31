@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Anomaly Dashboard</title>
+    <script src="Flask Setup.py"></script>
+    <script src="Remediation Function.py"></script>
+    <script src="Training the Model.PY"></script>
+    <script src="Simulate a Network Anomaly.py"></script>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Network Anomaly Dashboard</h1>
+    <table>
+        <tr>
+            <th>Source IP</th>
+            <th>Severity</th>
+            <th>Action Taken</th>
+        </tr>
+        {% for anomaly in anomalies %}
+        <tr>
+            <td>{{ anomaly.src_ip }}</td>
+            <td>{{ anomaly.severity }}</td>
+            <td>{{ anomaly.action_taken }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
